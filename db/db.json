@@ -1,13 +1,5 @@
 [
     {
-        "notesArray":[
-            {"title": "test title",
-            "text": "test text"},
-            {
-                "title": "test 2",
-                "text": "more text testsak",
-                "id": "945c"
-            }
-        ]
+        "notesArray":[]
     }
 ]
