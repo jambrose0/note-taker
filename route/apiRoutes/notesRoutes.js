@@ -1,7 +1,7 @@
 const router = require("express").Router();
-const { notes } = require("../../db/db.json");
+const notesArray = require("../../db/db.json");
 const { nanoid } = require("nanoid");
-const { v4: uuidv4 } = require("uuid");
+// const { v4: uuidv4 } = require("uuid");
 const {
   getNotes,
   createNote,
@@ -11,11 +11,8 @@ const {
 
 //get all notes
 router.get("/notes", (req, res) => {
-  if (req) {
-    res.json(getNotes());
-  } else {
-    res.status(404);
-  }
+  let results = notesArray;
+  res.json(results);
 });
 
 //create notes
