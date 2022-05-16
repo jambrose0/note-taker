@@ -20,7 +20,7 @@ router.get("/notes", (req, res) => {
 
 //create notes
 router.post("/notes", (req, res) => {
-  model.id = nanoid(12);
+  nanoid(12);
   if (!validateNote(req.body)) {
     res.status(400).send("note must have a title and body");
   } else {

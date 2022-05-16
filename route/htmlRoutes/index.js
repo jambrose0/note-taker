@@ -1,4 +1,5 @@
 const router = require("express").Router();
+const path = require("path");
 
 //get initial html page
 router.get("/", (req, res) => {
