@@ -1,4 +1,5 @@
 const router = require("express").Router();
+const fs = require("fs");
 const notesArray = require("../../db/db.json");
 const { nanoid } = require("nanoid");
 // const { v4: uuidv4 } = require("uuid");
@@ -8,11 +9,12 @@ const {
   deleteNote,
   validateNote,
 } = require("../../lib/notes");
+const { json } = require("express/lib/response");
 
 //get all notes
 router.get("/notes", (req, res) => {
-  let results = notesArray;
-  res.json(results);
+  let notes = JSON.parse(fs.readFileSync("./db/db.json"));
+  res.json(notes);
 });
 
 //create notes
