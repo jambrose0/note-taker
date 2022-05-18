@@ -21,9 +21,9 @@ router.get("/notes", (req, res) => {
 router.post("/notes", (req, res) => {
   const note = createNote(req.body);
   res.json(note);
-  if (err) {
-    res.status(500).json(err);
-  }
+  // if (err) {
+  //   res.status(500).json(err);
+  // }
 });
 
 // deleteNotes;
