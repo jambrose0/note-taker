@@ -17,13 +17,11 @@ router.get("/notes", (req, res) => {
 
 //create notes
 router.post("/notes", (req, res) => {
-  req.body.id = nanoid(12);
-  if (!validateNote(req.body)) {
-    res.status(400).send("note must have a title and body");
-  } else {
-    const note = createNote(req.body);
-    res.json(note);
-  }
+  const note = createNote(req.body);
+  res.json(note);
+  // if (err) {
+  //   res.status(500).json(err);
+  // }
 });
 
 //deleteNotes
