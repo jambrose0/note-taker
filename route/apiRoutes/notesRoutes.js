@@ -21,15 +21,15 @@ router.get("/notes", (req, res) => {
 router.post("/notes", (req, res) => {
   const note = createNote(req.body);
   res.json(note);
-  // if (err) {
-  //   res.status(500).json(err);
-  // }
+  if (err) {
+    res.status(500).json(err);
+  }
 });
 
-//deleteNotes
-// router.delete("/notes/:id", (req, res) => {
-//   deleteNote(req.params.id);
-//   res.json;
-// });
+// deleteNotes;
+router.delete("/notes/:id", (req, res) => {
+  deleteNote(req.params.id);
+  res.json;
+});
 
 module.exports = router;
